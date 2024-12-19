@@ -1,4 +1,4 @@
-# Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams
+## Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams
 
 This repository contains data and code accompaning:
 
@@ -72,7 +72,7 @@ In `group/meg`, group-level statistical information is stored.
 
 ## Replication
 
-To replicate the analyses implemented in the manuscript, first run the following MATLAB code in `code/matlab:
+To replicate the analyses implemented in the manuscript, first run the following MATLAB code in `code/matlab`:
 
 ```
 fit_linear_and_sigmoid.m

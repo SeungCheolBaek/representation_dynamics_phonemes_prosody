@@ -86,7 +86,7 @@ analysis_pipeline.py
 
 Please note that these codes do not create any files if there already exist results.
 
-Then, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and 'group/meg`.
+Then, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and `group/meg`.
 
 However the files below should never be deleted!:
 

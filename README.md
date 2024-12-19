@@ -20,7 +20,7 @@ Then, run the following command to install dependencies:
 pip install -r requirements.txt
 ```
 
-To avoid  the clashes with the existing environment on your computer, we recommend you install the dependencies in a virtual environments.
+To avoid  the clashes with the existing environment on your computer, we recommend you install the dependencies in a virtual environment.
 
 If you use [Anaconda](https://www.anaconda.com/) or [miniconda](https://docs.anaconda.com/miniconda/install/#quick-command-line-install), you can create the environment as below:
 
@@ -52,12 +52,11 @@ In the case of using `venv`, we recommend Python>=3.8.x.
 
 `code` contains the codes to replicate the analyses implemented in the paper.
 
-`code/matlab` includes MATLAB code to analyze behavior data
+`code/matlab` includes MATLAB code to analyze the behavior data
 
-`code/python` contains Python code applicable to neural data to replicate time-resolved representational similarity (RSA) and multivariate transfer (mTE) analayses based on regions of interest (ROIs).
+`code/python` stores the Python codes applicable to neural data to replicate time-resolved representational similarity (RSA) and multivariate transfer (mTE) analayses based on regions of interest (ROIs).
 
-
-`data` consists of individual subdirectories `sub-?? (01-29)`, where `behavior` and `MEG` data are stored in separate folders.
+`data` consists of individual sub-directories `sub-?? (01-29)`, where `behavior` and `meg` data are stored in separate folders.
 
 `behavior` contains raw behavior responses, sigmoidal fits, and model representational disimilarity matrices (RDMs).
 
@@ -65,9 +64,7 @@ In the case of using `venv`, we recommend Python>=3.8.x.
 
 In `group/meg`, group-level statistical information is stored.
 
-
 `figs` has `jupyter-notebook` files to replicate Figs. 1-6 in the paper based on the data in `data`.
-
 
 `stim` contains all the stimuli that were presented during the MEG experiment.
 
@@ -85,9 +82,9 @@ Then, run the following Python code in `code/python`:
 analysis_pipeline.py
 ```
 
-Please note that these codes do not create any files if there already exist results.
+Please note that these codes do not create any files if the results already exists in `data`.
 
-Then, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and `group/meg`.
+Then, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and `group/meg`, and run the codes above again.
 
 However the files below should never be deleted!:
 
@@ -97,7 +94,6 @@ data/sub-??/behavior/task_prosody.mat
 data/sub-??/meg/rdm_rois_*.pickle
 data/sub-??/meg/noise_cov_rois_*.pickle
 ```
-
 In case you delete these data, you can download them again in this repository.
 
 

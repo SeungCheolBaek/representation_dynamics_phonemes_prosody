@@ -38,11 +38,37 @@ In the case of using `venv`, we recommend Python>=3.8.x.
 
 ## Repository structure
 * [code](./code)
+	* [matlab](./code/matlab)
+	* [python](./code/python)
 * [data](./data)
 	* [group](./data/group)
 		* [meg](/data/group/meg)
-	* [sub-??](./data/sub-01)
+	* [sub-??](./data/sub-01) (01-29)
 		* [behavior](./data/sub-01/behavior)
 		* [meg](./data/sub-01/behaviour)
 * [figs](./figs)
 * [stim](./stim)
+
+`code` contains the codes to replicate the analyses implemented in the paper.
+
+`code/matlab` includes MATLAB code to analyze behavior data
+
+`code/python` contains Python code applicable to neural data to replicate time-resolved representational similarity (RSA) and multivariate transfer (mTE) analayses based on regions of interest (ROIs).
+
+
+`data` consists of individual subdirectories `sub-?? (01-29)`, where `behavior` and `MEG` data are stored in separate folders.
+
+`behavior` contains raw behavior responses, sigmoidal fits, and model representational disimilarity matrices (RDMs).
+
+`meg` contains neural RDMs, ROI-based time-resolved RSA and mTE analysis results.
+
+In `group/meg`, group-level statistical information is stored.
+
+
+`figs` has `jupyter-notebook` files to replicate Figs. 1-6 in the paper based on the data in `data`.
+
+
+`stim` contains all stimuli that were presented during the MEG experiment.
+
+
+

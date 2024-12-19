@@ -1,4 +1,4 @@
-## Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams
+# Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams
 
 This repository contains data and code accompaning:
 
@@ -68,7 +68,36 @@ In `group/meg`, group-level statistical information is stored.
 `figs` has `jupyter-notebook` files to replicate Figs. 1-6 in the paper based on the data in `data`.
 
 
-`stim` contains all stimuli that were presented during the MEG experiment.
+`stim` contains all the stimuli that were presented during the MEG experiment.
+
+## Replication
+
+To replicate the analyses implemented in the manuscript, first run the following MATLAB code in `code/matlab:
+
+```
+fit_linear_and_sigmoid.m
+```
+
+Then, run the following Python code in `code/python`:
+
+```
+analysis_pipeline.py
+```
+
+Please note that these codes do not create any files if there already exist results.
+
+Then, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and 'group/meg`.
+
+However the files below should never be deleted!:
+
+```
+data/sub-??/behavior/task_phoneme.mat
+data/sub-??/behavior/task_prosody.mat
+data/sub-??/meg/rdm_rois_*.pickle
+data/sub-??/meg/noise_cov_rois_*.pickle
+```
+
+In case you delete these data, you can download them again in this repository.
 
 
 

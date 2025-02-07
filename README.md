@@ -17,7 +17,7 @@ The scripts can run on a standard computer, but would run much faster if accessi
 
 ## Software requirements
 ### OS requirements
-The scripts is supported for *MacOS* and *Linux*, and has been tested on the following systems:
+The scripts are supported for *MacOS* and *Linux*, and have been tested on the following systems:
 + MacOS: Sonoma (14.7.1)
 + Linux: Debian GNU/Linux 11 (bullseye)
 
@@ -139,3 +139,8 @@ In case you delete these data, you can download them again in this repository.
 
 On a standard computer, the whole computation would take about ~45-48 hours (tested on MacBook Pro, Apple M1, 16GB RAM).
 
+
+# Documentation
+The documentation of Python functions can be called using `help()`.
+
+Or, you can also find the documentation in source code.

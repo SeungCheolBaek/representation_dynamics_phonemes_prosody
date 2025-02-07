@@ -1,26 +1,63 @@
-## Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams
+# Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams
 
 This repository contains data and code accompaning:
+Baek, S-C., Kim, S-G., Maess, B., Grigutsch, M., & Sammler, D., Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams. *bioRxiv*, 2025-01. [https://doi.org/10.1101/2025.01.24.634030](https://doi.org/10.1101/2025.01.24.634030).
 
-Baek, S-C., Kim, S-G., Maess, B., Grigutsch, M., & Sammler, D., Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams.
+This study investigates cortical representational dynamics of phonemes and prosody using time-resolved representational similarity (RSA) and multivariate transfer entropy (mTE) analyses applied to MEG and behavioral psychophysical data.
 
-## Environment
+In this repository, we provide the auditory stimuli and individual behavioral responses collected during the MEG experiment, as well as the preprocessed neural data including the neural representational dissimilarity matrices (RDMs) and time-resolved RSA and mTE results based on the regions of interest (ROIs).
 
-Except for the behavior data analysis, the code in this repository runs on a Python 3.10.5 environments.
+The scripts provided here are to replicate the ROI-based RSA and mTE analyses, as well as the main figures (Figs 1-6.).
 
-To run the code, first clone this repository in your directory as follows:
+
+# System Requirements
+## Hardware requirements 
+The scripts can run on a standard computer, but would run much faster if accessible to computing clusters.
+
+## Software requirements
+### OS requirements
+The scripts is supported for *MacOS* and *Linux*, and has been tested on the following systems:
++ MacOS: Sonoma (14.7.1)
++ Linux: Debian GNU/Linux 11 (bullseye)
+
+### MATLAB
+The analysis of behavioral date relies on MATLAB (>= R2013a) with *Curve Fitting Toolbox*.
+The MATLAB codes were developed using MATLAB R2021a.
+
+### Python
+The python codes were originally developed in a Python 3.10.5 environment, and has been tested with Python 3.9.13.
+In general, we recommend Python>=3.8.x.
+
+Python dependencies are listed below:
+
+```
+numpy
+scipy
+mne
+joblib
+tqdm
+scikit-learn
+pandas
+matplotlib
+seaborn
+notebook
+```
+
+
+# Installation Guide
+To run the scripts on your computer, first clone this repository as follows:
 
 ```
 git clone https://github.com/SeungCheolBaek/representation_dynamics_phonemes_prosody.git
 ```
 
-Then, run the following command to install dependencies:
+Next, run the following command in propmt to install all dependencies (<1 min. on a standard computer):
 
 ```
 pip install -r requirements.txt
 ```
 
-To avoid  the clashes with the existing environment on your computer, we recommend you install the dependencies in a virtual environment.
+To avoid clashes with the existing environment on your computer, we recommend you install the dependencies in a virtual environment.
 
 If you use [Anaconda](https://www.anaconda.com/) or [miniconda](https://docs.anaconda.com/miniconda/install/#quick-command-line-install), you can create the environment as below:
 
@@ -33,11 +70,11 @@ Otherwise, you can use Python virtual environments as below:
 
 ```
 python3 -m vevn <envname>
-source ./venv/Scripts/activate
+source venv/bin/activate
 ```
-In the case of using `venv`, we recommend Python>=3.8.x.
 
-## Repository structure
+
+# Repository structure
 * [code](./code)
 	* [matlab](./code/matlab)
 	* [python](./code/python)
@@ -52,13 +89,13 @@ In the case of using `venv`, we recommend Python>=3.8.x.
 
 `code` contains the codes to replicate the analyses implemented in the paper.
 
-`code/matlab` includes MATLAB code to analyze the behavior data
+`code/matlab` includes MATLAB code to analyze the behavior data.
 
-`code/python` stores the Python codes applicable to neural data to replicate time-resolved representational similarity (RSA) and multivariate transfer (mTE) analayses based on regions of interest (ROIs).
+`code/python` stores the Python codes applicable to neural data to replicate ROI-based time-resolved RSA and mTE analysis.
 
 `data` consists of individual sub-directories `sub-?? (01-29)`, where `behavior` and `meg` data are stored in separate folders.
 
-`behavior` contains raw behavior responses, sigmoidal fits, and model representational disimilarity matrices (RDMs).
+`behavior` contains raw behavior responses, sigmoidal fits, and model RDMs.
 
 `meg` contains neural RDMs, ROI-based time-resolved RSA and mTE analysis results.
 
@@ -68,7 +105,8 @@ In `group/meg`, group-level statistical information is stored.
 
 `stim` contains all the stimuli that were presented during the MEG experiment.
 
-## Replication
+
+# Implementation
 
 To replicate the analyses implemented in the manuscript, first run the following MATLAB code in `code/matlab`:
 
@@ -82,11 +120,10 @@ Then, run the following Python code in `code/python`:
 analysis_pipeline.py
 ```
 
-Please note that these codes do not create any files if the results already exists in `data`.
+Please note that these commands do not create any files, if the results already exist in `data`.
 
-Then, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and `group/meg`, and run the codes above again.
-
-However the files below should never be deleted!:
+To reproduce the results files, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and `group/meg`, and run the codes above again.
+However, the files below should never be deleted:
 
 ```
 data/sub-??/behavior/task_phoneme.mat
@@ -96,5 +133,5 @@ data/sub-??/meg/noise_cov_rois_*.pickle
 ```
 In case you delete these data, you can download them again in this repository.
 
-
+On a standard computer, the whole computation would take about ~45-48 hours (tested with MacBook Pro, Apple M1, 16GB RAM).
 

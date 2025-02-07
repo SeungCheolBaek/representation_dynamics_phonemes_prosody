@@ -1,6 +1,7 @@
 # Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams
 
 This repository contains data and code accompaning:
+
 Baek, S-C., Kim, S-G., Maess, B., Grigutsch, M., & Sammler, D., Shared and distinct representational dynamics of phonemes and prosody in ventral and dorsal speech streams. *bioRxiv*, 2025-01. [https://doi.org/10.1101/2025.01.24.634030](https://doi.org/10.1101/2025.01.24.634030).
 
 This study investigates cortical representational dynamics of phonemes and prosody using time-resolved representational similarity (RSA) and multivariate transfer entropy (mTE) analyses applied to MEG and behavioral psychophysical data.
@@ -22,10 +23,12 @@ The scripts is supported for *MacOS* and *Linux*, and has been tested on the fol
 
 ### MATLAB
 The analysis of behavioral date relies on MATLAB (>= R2013a) with *Curve Fitting Toolbox*.
+
 The MATLAB codes were developed using MATLAB R2021a.
 
 ### Python
 The python codes were originally developed in a Python 3.10.5 environment, and has been tested with Python 3.9.13.
+
 In general, we recommend Python>=3.8.x.
 
 Python dependencies are listed below:
@@ -91,7 +94,7 @@ source venv/bin/activate
 
 `code/matlab` includes MATLAB code to analyze the behavior data.
 
-`code/python` stores the Python codes applicable to neural data to replicate ROI-based time-resolved RSA and mTE analysis.
+`code/python` stores the Python codes applicable to the neural data to replicate ROI-based time-resolved RSA and mTE analysis.
 
 `data` consists of individual sub-directories `sub-?? (01-29)`, where `behavior` and `meg` data are stored in separate folders.
 
@@ -123,6 +126,7 @@ analysis_pipeline.py
 Please note that these commands do not create any files, if the results already exist in `data`.
 
 To reproduce the results files, you can delete the files in `sub-??/behavior`, `sub-??/meg`,  and `group/meg`, and run the codes above again.
+
 However, the files below should never be deleted:
 
 ```
@@ -133,5 +137,5 @@ data/sub-??/meg/noise_cov_rois_*.pickle
 ```
 In case you delete these data, you can download them again in this repository.
 
-On a standard computer, the whole computation would take about ~45-48 hours (tested with MacBook Pro, Apple M1, 16GB RAM).
+On a standard computer, the whole computation would take about ~45-48 hours (tested on MacBook Pro, Apple M1, 16GB RAM).
 

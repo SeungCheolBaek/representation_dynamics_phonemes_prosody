@@ -1,7 +1,7 @@
 ## utility functions
 #
 # written by S-C. Baek
-# update: 07.02.2025
+# update: 24.04.2025
 #
 # encoding: utf-8
 '''
@@ -24,7 +24,7 @@ def get_main_dir():
     PWD = os.getcwd()
     if PWD.split('/')[-1] == 'python':
         MAINDIR = os.path.abspath('../..')
-    elif PWD.split('/')[-1] == 'code':
+    elif PWD.split('/')[-1] == 'code' or PWD.split('/')[-1] == 'figs':
         MAINDIR = os.path.abspath('..')
     else:
         MAINDIR = os.getcwd()
@@ -32,7 +32,8 @@ def get_main_dir():
 
     # check if MAINDIR is actually the main directory
     if 'README.md' not  in files:
-        raise ValueError("your current directory should be one of the following: 'MAINDIR/', 'MAINDIR/code/', 'MAINDIR/code/python/")
+        raise ValueError("your current directory should be one of the following: "
+			 "'MAINDIR', 'MAINDIR/code', 'MAINDIR/figs', 'MAINDIR/code/python")
     assert 'code' in files
     assert 'data' in files
     assert 'figs' in files
